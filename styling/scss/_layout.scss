@@ -1,0 +1,142 @@
+@use 'base';
+@use 'components';
+@use 'type';
+
+body {
+    background-color: base.$gray-200;
+    min-height: 100vh;
+
+    main {
+        min-height: 100vh;
+        /* height: 100%; */
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+
+.container {
+    padding: 0 clamp(1.846rem, calc(-2.264rem + 14.249vw), 6.154rem);
+    margin: auto 0;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    /* overflow: hidden; */
+    gap: 32px;
+    background-color: white;
+    width: 100%;
+    max-width: 730px;
+    margin: 0 auto;
+    box-shadow: 0 40px 40px base.$gray-shadow;
+
+    /* Share toast settings */
+    position: relative;
+
+
+    @media (min-width: base.$vp-medium) {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .card-img {
+
+        object-fit: cover;
+        object-position: top center;
+        min-height: 0px;
+        border-radius: 10px 10px 0 0;
+
+        @media (min-width: base.$vp-medium) {
+            flex: 1 0 39.5%;
+            min-width: 0px;
+            border-radius: 10px 0 0 10px;
+        }
+    }
+
+    .card-main {
+        /* Self-Flex */
+
+
+        /* Inner elements */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+        padding: 0 30px 18px;
+
+        @media (min-width: base.$vp-medium) {
+            padding: 30px 40px;
+            gap: 24px;
+            /* flex: 1 1 auto; */
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            width: 100%;
+
+            h1 {
+                @include type.heading;
+                color: base.$gray-900;
+            }
+
+            p {
+                @include type.paragraph;
+                color: base.$gray-500;
+            }
+        }
+
+        .card-meta {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+
+            img {
+                /* 
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 40px;
+            */
+                flex: 0 0 40px;
+                /* min-width: 0; */
+                /* width: 40px; */
+                height: 40px;
+                border-radius: 100%;
+            }
+
+            .text-meta {
+                /* Config for parent */
+                flex: 1 1 auto;
+
+                /* Own config */
+                display: flex;
+                flex-direction: column;
+                @include type.paragraph;
+                color: base.$gray-400;
+
+
+                .author-name {
+                    @include type.paragraph(700);
+                    color: base.$gray-900;
+                }
+
+            }
+        }
+
+    }
+}
+
+.hidden {
+    display: none;
+}

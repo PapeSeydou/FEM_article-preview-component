@@ -1,0 +1,26 @@
+{
+  "name": "article-preview-component-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Article preview component coding challenge](./design/desktop-preview.jpg)",
+  "main": "main.js",
+  "scripts": {
+    "start": "concurrently \"live-server --port=8081 --browser=start-dev.bat --open=./index.html\" \"sass --watch ./styling/scss/style.scss:./styling/style.css\"",
+    "start-old": "concurrently \"live-server --port=8081 --browser=C:\\Users\\log\\AppData\\Local\\Microsoft\\EDGESX~1\\Application\\msedge.exe\" \"sass --watch ./styling/scss/style.scss:./styling/style.css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PapeSeydou/FEM_article-preview-component.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PapeSeydou/FEM_article-preview-component/issues"
+  },
+  "homepage": "https://github.com/PapeSeydou/FEM_article-preview-component#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "sass": "^1.90.0"
+  }
+}

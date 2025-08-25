@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+/* Colors */
+/* Media Queries */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 13px;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+.share-toast {
+  /* Positionning */
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  /* Positionning Tablet & Desktop*/
+  /* Layout */
+  padding: 22px 30px;
+  border-radius: 0 0 10px 10px;
+  background-color: #48556A;
+  /* Layout Tablet & Desktop */
+  /* Inside */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 600px) {
+  .share-toast {
+    position: absolute;
+    width: auto;
+    bottom: 96px;
+    right: 56px;
+    transform: translateX(50%);
+  }
+}
+@media (min-width: 600px) {
+  .share-toast {
+    padding: 17px 39px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px hsla(210, 29%, 84%, 0.5);
+  }
+}
+.share-toast .share-main {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.share-toast .share-main .share-text {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #ECF2F8;
+}
+.share-toast .share-main .share-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+@media (min-width: 600px) {
+  .share-toast::after {
+    content: "";
+    /* Placing it */
+    position: absolute;
+    bottom: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Styling it */
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 13px solid #48556A;
+  }
+}
+
+.share-button {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  background-color: #ECF2F8;
+  border: 0;
+  border-radius: 100%;
+  /* Tablets & Desktops */
+}
+.share-button path {
+  fill: #6E8098;
+}
+.share-button:hover {
+  background-color: #6E8098;
+}
+.share-button:hover path {
+  fill: white;
+}
+
+@media (min-width: 600px) {
+  .share-button-toast {
+    display: none;
+  }
+}
+
+body {
+  background-color: #ECF2F8;
+  min-height: 100vh;
+}
+body main {
+  min-height: 100vh;
+  /* height: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 0 clamp(1.846rem, -2.264rem + 14.249vw, 6.154rem);
+  margin: auto 0;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  /* overflow: hidden; */
+  gap: 32px;
+  background-color: white;
+  width: 100%;
+  max-width: 730px;
+  margin: 0 auto;
+  box-shadow: 0 40px 40px hsla(210, 29%, 84%, 0.5);
+  /* Share toast settings */
+  position: relative;
+}
+@media (min-width: 600px) {
+  .card {
+    flex-direction: row;
+    gap: 0;
+  }
+}
+.card .card-img {
+  object-fit: cover;
+  object-position: top center;
+  min-height: 0px;
+  border-radius: 10px 10px 0 0;
+}
+@media (min-width: 600px) {
+  .card .card-img {
+    flex: 1 0 39.5%;
+    min-width: 0px;
+    border-radius: 10px 0 0 10px;
+  }
+}
+.card .card-main {
+  /* Self-Flex */
+  /* Inner elements */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  padding: 0 30px 18px;
+}
+@media (min-width: 600px) {
+  .card .card-main {
+    padding: 30px 40px;
+    gap: 24px;
+    /* flex: 1 1 auto; */
+  }
+}
+.card .card-main .card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+.card .card-main .card-content h1 {
+  font-size: 1.538rem;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0.25px;
+  color: #48556A;
+}
+.card .card-main .card-content p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.1px;
+  color: #6E8098;
+}
+.card .card-main .card-meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+.card .card-main .card-meta img {
+  /* 
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 40px;
+  */
+  flex: 0 0 40px;
+  /* min-width: 0; */
+  /* width: 40px; */
+  height: 40px;
+  border-radius: 100%;
+}
+.card .card-main .card-meta .text-meta {
+  /* Config for parent */
+  flex: 1 1 auto;
+  /* Own config */
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.1px;
+  color: #9DAEC2;
+}
+.card .card-main .card-meta .text-meta .author-name {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0.1px;
+  color: #48556A;
+}
+
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

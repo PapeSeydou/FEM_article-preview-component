@@ -10,7 +10,10 @@
 #######################################################
 *.xd
 *.fig
+*.bat
 article-preview-component-figma/
 
 # Avoid your project being littered with annoying .DS_Store files!
 .DS_Store
+.vscode/
+node_modules/

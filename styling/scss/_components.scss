@@ -1,0 +1,102 @@
+@use 'type';
+@use 'base';
+
+.share-toast {
+    /* Positionning */
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    /* Positionning Tablet & Desktop*/
+    @media (min-width: base.$vp-medium){
+        position: absolute;
+        width: auto;
+        bottom: 96px;
+        right: 56px;
+        transform: translateX(50%);
+    }
+
+    /* Layout */
+    padding: 22px 30px;
+    border-radius: 0 0 10px 10px;
+    background-color: base.$gray-900;
+
+    /* Layout Tablet & Desktop */
+    @media (min-width: base.$vp-medium){
+        padding: 17px 39px;
+        border-radius: 10px;
+        box-shadow: 0 10px 10px base.$gray-shadow;
+    }
+
+
+    /* Inside */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .share-main {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+
+        .share-text {
+            @include type.share;
+            color: base.$gray-200;
+        }
+
+        .share-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+    }
+
+    &::after{
+        @media (min-width: base.$vp-medium) {
+            content: '';
+            /* Placing it */
+            position: absolute;
+            bottom: -11px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            /* Styling it */
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 13px solid base.$gray-900;}
+    }
+}
+
+.share-button {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-content: center;
+    background-color: base.$gray-200;
+    border: 0;
+    border-radius: 100%;
+
+    /* Tablets & Desktops */
+
+
+    path {
+        fill: base.$gray-500;
+    }
+
+    &:hover{
+        background-color: base.$gray-500;
+        & path{
+            fill: white;
+        }
+    }
+        
+}
+
+.share-button-toast{
+    @media (min-width: base.$vp-medium) {
+        display: none;
+    }
+}

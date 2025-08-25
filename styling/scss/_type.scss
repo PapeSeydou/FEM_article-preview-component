@@ -1,0 +1,23 @@
+@use 'base';
+
+@mixin heading{
+    font-size: 1.538rem;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: .25px;
+}
+
+@mixin paragraph($p-weight: 400) {
+    font-size: 1rem;
+    font-weight: $p-weight;
+    line-height: 140%;
+    letter-spacing: 0.1px;
+}
+
+@mixin share{
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
